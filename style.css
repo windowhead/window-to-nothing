@@ -92,11 +92,16 @@ h2 {
     margin: 5px;
     padding: 10px;
     flex: 1;
-    overflow-y: auto;
+    overflow-y: auto; /* Scrollable */
     border: solid 2px;
     border-color: black #fdffff #fdffff black;
     background-color: white;
+    display: flex;
+    flex-wrap: wrap; /* Allow content to wrap */
+    justify-content: space-between; /* Space out the items */
+    align-items: flex-start;
 }
+
 
 .navbar {
     padding-top: 5px;
@@ -165,6 +170,8 @@ button {
     border: 2px solid;
     border-color: #fdffff black black #fdffff;
     cursor: pointer;
+    width: 100%; /* Buttons will take the full width of their container */
+    margin-bottom: 10px;
 }
 
 button:hover {
@@ -200,16 +207,22 @@ button:hover {
 }
 
 .videoimg {
-    width: 30vw;
+    width: 100%; /* Images will take the full width of their container */
     border: solid 2px;
     border-color: #d1d1d1 black black #d1d1d1;
+    margin-bottom: 10px;
 }
 
 .videos, .videobutton, .videotext {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 48%; /* Each set will take up about half the width of the container */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Space between rows */
 }
 
+.videotext {
+    width: 100%; /* Text will take the full width of their container */
+    font-size: 1.5em;
+}
