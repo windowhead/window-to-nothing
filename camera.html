@@ -8,7 +8,66 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <script>
+       // Open the Modal
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+// Close the Modal
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Global slide index for each modal
+let slideIndexes = {};
+
+// Show the specific slide in the modal
+function showSlides(modalId, n) {
+    let slides = document.querySelectorAll(`#${modalId} .mySlides`);
+    let dots = document.querySelectorAll(`#${modalId} .demo`);
+    let captionText = document.querySelector(`#${modalId} #caption`);
     
+    // Initialize the slide index for the modal if not already
+    if (!slideIndexes[modalId]) {
+        slideIndexes[modalId] = 1;
+    }
+
+    if (n > slides.length) {
+        slideIndexes[modalId] = 1;
+    }
+    if (n < 1) {
+        slideIndexes[modalId] = slides.length;
+    }
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Remove the 'active' class from all thumbnail dots
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // Show the current slide and update the caption
+    slides[slideIndexes[modalId] - 1].style.display = "block";
+    dots[slideIndexes[modalId] - 1].className += " active";
+    captionText.innerHTML = dots[slideIndexes[modalId] - 1].alt;
+}
+
+// Navigate to the next/previous slide
+function plusSlides(modalId, n) {
+    showSlides(modalId, slideIndexes[modalId] += n);
+}
+
+// Display the clicked thumbnail image
+function currentSlide(modalId, n) {
+    showSlides(modalId, slideIndexes[modalId] = n);
+}
+
+        </script>
 
 </head>
 <body>
@@ -40,13 +99,234 @@
                 </ul>
             </nav>
             <div class="windowmain">
-                <div class="container">
-                    <div class="item">Item 1</div>
-                    <div class="item">Item 2</div>
-                    <div class="item">Item 3</div>
-                    <div class="item">Item 4</div>
-                </div>
+
+                <h2>Roaming the world</h2>
+
+
                 
+                <div class="row">
+                    <h2 class="h2camera">No comfort zone</h2>
+                    <div class="column">
+                        <img src="img/Munich/IMG_8064.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 1)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Munich/IMG_8065.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 2)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Munich/IMG_8066.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 3)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Munich/IMG_8069.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 4)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Munich/IMG_8079.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 5)" class="hover-shadow">
+                    </div>
+                </div>
+
+                <!-- Munich Modal -->
+                <div id="modalMunich" class="modal">
+                    <span class="close cursor" onclick="closeModal('modalMunich')">&times;</span>
+                    <div class="modal-content">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 5</div>
+                            <img src="img/Munich/IMG_8064.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 5</div>
+                            <img src="img/Munich/IMG_8065.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 5</div>
+                            <img src="img/Munich/IMG_8066.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 5</div>
+                            <img src="img/Munich/IMG_8069.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 5</div>
+                            <img src="img/Munich/IMG_8079.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides('modalMunich', -1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides('modalMunich', 1)">&#10095;</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Munich/IMG_8064.jpg" onclick="showSlides('modalMunich', 1)" alt="Nature">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Munich/IMG_8065.jpg" onclick="showSlides('modalMunich', 2)" alt="Snow">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Munich/IMG_8066.jpg" onclick="showSlides('modalMunich', 3)" alt="Mountains">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Munich/IMG_8079.jpg" onclick="showSlides('modalMunich', 4)" alt="Lights">
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <h2 class="h2camera">Prosperity in a dream</h2>
+                    <div class="column">
+                        <img src="img/seealpsee/IMG_8222.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 1)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/seealpsee/IMG_8224.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 2)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/seealpsee/IMG_8240.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 3)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/seealpsee/IMG_8252.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 4)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/seealpsee/IMG_8261.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 5)" class="hover-shadow">
+                    </div>
+                </div>
+
+                <!-- Seealpsee Modal -->
+                <div id="modalSeealpsee" class="modal">
+                    <span class="close cursor" onclick="closeModal('modalSeealpsee')">&times;</span>
+                    <div class="modal-content">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 5</div>
+                            <img src="img/seealpsee/IMG_8222.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 5</div>
+                            <img src="img/seealpsee/IMG_8224.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 5</div>
+                            <img src="img/seealpsee/IMG_8240.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 5</div>
+                            <img src="img/seealpsee/IMG_8252.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 5</div>
+                            <img src="img/seealpsee/IMG_8261.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides('modalSeealpsee', -1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides('modalSeealpsee', 1)">&#10095;</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/seealpsee/IMG_8222.jpg" onclick="showSlides('modalSeealpsee', 1)" alt="Seealpsee 1">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/seealpsee/IMG_8224.jpg" onclick="showSlides('modalSeealpsee', 2)" alt="Seealpsee 2">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/seealpsee/IMG_8240.jpg" onclick="showSlides('modalSeealpsee', 3)" alt="Seealpsee 3">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/seealpsee/IMG_8252.jpg" onclick="showSlides('modalSeealpsee', 4)" alt="Seealpsee 4">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <h2 class="h2camera">Oblivion</h2>
+                    <div class="column">
+                        <img src="img/Säntis/IMG_7761.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 1)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Säntis/IMG_7778.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 2)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Säntis/IMG_7833.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 3)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Säntis/IMG_7858.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 4)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/Säntis/IMG_7873.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 5)" class="hover-shadow">
+                    </div>
+                </div>
+
+                <!-- Munich Modal -->
+                <div id="modalSaentis" class="modal">
+                    <span class="close cursor" onclick="closeModal('modalSaentis')">&times;</span>
+                    <div class="modal-content">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 5</div>
+                            <img src="img/Säntis/IMG_7761.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 5</div>
+                            <img src="img/Säntis/IMG_7778.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 5</div>
+                            <img src="img/Säntis/IMG_7833.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 5</div>
+                            <img src="img/Säntis/IMG_7858.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 5</div>
+                            <img src="img/Säntis/IMG_7873.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides('modalSaentis', -1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides('modalSaentis', 1)">&#10095;</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Munich/IMG_8064.jpg" onclick="showSlides('modalSaentis', 1)" alt="Nature">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Säntis/IMG_7833.jpg" onclick="showSlides('modalSaentis', 2)" alt="Snow">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Säntis/IMG_7858.jpg" onclick="showSlides('modalSaentis', 3)" alt="Mountains">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/Säntis/IMG_7873.jpg" onclick="showSlides('modalSaentis', 4)" alt="Lights">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </main>
 
