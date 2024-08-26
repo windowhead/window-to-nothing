@@ -266,7 +266,7 @@ button:hover {
   /* Modal Content */
   .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #000000;
     margin: auto;
     padding: 0;
     width: 90%;
