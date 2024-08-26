@@ -362,4 +362,110 @@ button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  
+  .container {
+    display: flex;
+    font-size: 20px;
+    width: 100%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: #e6e6e6 black black #e6e6e6;
+}
+
+.left-side, .right-side {
+    padding: 20px;
+}
+
+.left-side {
+    width: 30%;
+    background-color: #e9ecef;
+    border-right: 1px solid #ccc;
+}
+
+.profile-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.profile-info h2 {
+    margin-bottom: 10px;
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+}
+
+.profile-details p {
+    font-size: 20px;
+}
+
+.profile-pic {
+    width: 6vw;
+    height: 12vh;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-right: 10px;
+}
+
+.info-text {
+    font-size: 14px;
+}
+
+.view-my {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.view-my p {
+    font-size: 20px;
+}
+
+.view-my a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.view-my a:hover {
+    text-decoration: underline;
+}
+
+.profile-links {
+    text-align: left;
+}
+
+.profile-links a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.profile-links a:hover {
+    text-decoration: underline;
+}
+
+.right-side {
+    width: 70%;
+}
+
+.biography {
+    margin-bottom: 20px;
+}
+
+.photo-gallery {
+    margin-top: 20px;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.gallery img {
+    width: calc(20% - 10px);
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
