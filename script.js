@@ -1,17 +1,17 @@
- // Open the Modal
+ //Open Modal
  function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
 }
 
-// Close the Modal
+//Close Modal
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 
-// Global slide index for each modal
+//Global slide index each modal
 let slideIndexes = {};
 
-// Show the specific slide in the modal
+//Show the specific slide in the modal
 function showSlides(modalId, n) {
     let slides = document.querySelectorAll(`#${modalId} .mySlides`);
     let dots = document.querySelectorAll(`#${modalId} .demo`);
