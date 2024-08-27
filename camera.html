@@ -8,66 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-
-    <script>
-       // Open the Modal
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
-}
-
-// Close the Modal
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
-
-// Global slide index for each modal
-let slideIndexes = {};
-
-// Show the specific slide in the modal
-function showSlides(modalId, n) {
-    let slides = document.querySelectorAll(`#${modalId} .mySlides`);
-    let dots = document.querySelectorAll(`#${modalId} .demo`);
-    let captionText = document.querySelector(`#${modalId} #caption`);
-    
-    // Initialize the slide index for the modal if not already
-    if (!slideIndexes[modalId]) {
-        slideIndexes[modalId] = 1;
-    }
-
-    if (n > slides.length) {
-        slideIndexes[modalId] = 1;
-    }
-    if (n < 1) {
-        slideIndexes[modalId] = slides.length;
-    }
-
-    // Hide all slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    // Remove the 'active' class from all thumbnail dots
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    // Show the current slide and update the caption
-    slides[slideIndexes[modalId] - 1].style.display = "block";
-    dots[slideIndexes[modalId] - 1].className += " active";
-    captionText.innerHTML = dots[slideIndexes[modalId] - 1].alt;
-}
-
-// Navigate to the next/previous slide
-function plusSlides(modalId, n) {
-    showSlides(modalId, slideIndexes[modalId] += n);
-}
-
-// Display the clicked thumbnail image
-function currentSlide(modalId, n) {
-    showSlides(modalId, slideIndexes[modalId] = n);
-}
-
-        </script>
+    <script src="script.js"></script>
 
 </head>
 <body>
