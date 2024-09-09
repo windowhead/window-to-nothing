@@ -41,7 +41,83 @@
                 </ul>
             </nav>
             <div class="windowmain">
-                <p class="welcometext">Hi! Welcome to my website!</p>
+                <h2>Roaming the world</h2>
+
+
+                
+                <div class="row">
+                    <h2 class="h2camera">Paint</h2>
+                    <div class="column">
+                        <img src="img/paint/painting/20201218_094640.jpg" onclick="openModal('modalpaint1'); showSlides('modalpaint1', 1)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/paint/painting/20220828_101655.jpg" onclick="openModal('modalpaint1'); showSlides('modalpaint1', 2)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/paint/painting/20220906_192116.jpg" onclick="openModal('modalpaint1'); showSlides('modalpaint1', 3)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/paint/painting/20220906_192222.jpg" onclick="openModal('modalpaint1'); showSlides('modalpaint1', 4)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="img/paint/painting/20220907_200316.jpg" onclick="openModal('modalpaint1'); showSlides('modalpaint1', 5)" class="hover-shadow">
+                    </div>
+                </div>
+
+            
+                <div id="modalpaint1" class="modal">
+                    <span class="close cursor" onclick="closeModal('modalpaint1')">&times;</span>
+                    <div class="modal-content">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 5</div>
+                            <img src="img/paint/painting/20201218_094640.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 5</div>
+                            <img src="img/paint/painting/20220828_101655.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 5</div>
+                            <img src="img/paint/painting/20201218_094640.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 5</div>
+                            <img src="img/paint/painting/20220906_192222.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 5</div>
+                            <img src="img/paint/painting/20220907_200316.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides('modalpaint1', -1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides('modalpaint1', 1)">&#10095;</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/paint/painting/20201218_094640.jpg" onclick="showSlides('modalpaint1', 1)" alt="Nature">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/paint/painting/20220828_101655.jpg" onclick="showSlides('modalpaint1', 2)" alt="Snow">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/paint/painting/20201218_094640.jpg" onclick="showSlides('modalpaint1', 3)" alt="Mountains">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img/paint/painting/20220906_192222.jpg" onclick="showSlides('modalpaint1', 4)" alt="Lights">
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         </div>

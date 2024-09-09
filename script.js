@@ -1,56 +1,38 @@
- //Open Modal
- function openModal(modalId) {
+let slideIndex = {};
+
+// Open the modal and set the initial slide
+function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
+    if (slideIndex[modalId] === undefined) {
+        slideIndex[modalId] = 1; // Default to the first slide if not set
+    }
+    showSlides(modalId, slideIndex[modalId]);
 }
 
-//Close Modal
+// Close the modal
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 
-//Global slide index each modal
-let slideIndexes = {};
-
-//Show the specific slide in the modal
+// Show the current slide
 function showSlides(modalId, n) {
-    let slides = document.querySelectorAll(`#${modalId} .mySlides`);
-    let dots = document.querySelectorAll(`#${modalId} .demo`);
-    let captionText = document.querySelector(`#${modalId} #caption`);
-    
-    // Initialize the slide index for the modal if not already
-    if (!slideIndexes[modalId]) {
-        slideIndexes[modalId] = 1;
-    }
-
-    if (n > slides.length) {
-        slideIndexes[modalId] = 1;
-    }
-    if (n < 1) {
-        slideIndexes[modalId] = slides.length;
-    }
-
-    // Hide all slides
-    for (let i = 0; i < slides.length; i++) {
+    let i;
+    const slides = document.querySelectorAll(`#${modalId} .mySlides`);
+    if (n > slides.length) slideIndex[modalId] = 1;
+    if (n < 1) slideIndex[modalId] = slides.length;
+    for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-
-    // Remove the 'active' class from all thumbnail dots
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    // Show the current slide and update the caption
-    slides[slideIndexes[modalId] - 1].style.display = "block";
-    dots[slideIndexes[modalId] - 1].className += " active";
-    captionText.innerHTML = dots[slideIndexes[modalId] - 1].alt;
+    slides[slideIndex[modalId] - 1].style.display = "block";
 }
 
-// Navigate to the next/previous slide
+// Move to the next/previous slide
 function plusSlides(modalId, n) {
-    showSlides(modalId, slideIndexes[modalId] += n);
+    showSlides(modalId, slideIndex[modalId] += n);
 }
 
-// Display the clicked thumbnail image
+// Set the current slide
 function currentSlide(modalId, n) {
-    showSlides(modalId, slideIndexes[modalId] = n);
+    slideIndex[modalId] = n;
+    showSlides(modalId, n);
 }

@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
-
+    <script src="script.js" defer></script> <!-- Added defer to ensure JS loads after HTML -->
 </head>
 <body>
     <main>
@@ -43,25 +42,24 @@
             <div class="windowmain">
 
                 <h2>Roaming the world</h2>
+                <p>More on Instagram</p>
 
-
-                
                 <div class="row">
                     <h2 class="h2camera">No comfort zone</h2>
                     <div class="column">
-                        <img src="img/Munich/IMG_8064.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 1)" class="hover-shadow">
+                        <img src="img/Munich/IMG_8064.jpg" onclick="openModal('modalMunich'); currentSlide('modalMunich', 1)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Munich/IMG_8065.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 2)" class="hover-shadow">
+                        <img src="img/Munich/IMG_8065.jpg" onclick="openModal('modalMunich'); currentSlide('modalMunich', 2)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Munich/IMG_8066.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 3)" class="hover-shadow">
+                        <img src="img/Munich/IMG_8066.jpg" onclick="openModal('modalMunich'); currentSlide('modalMunich', 3)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Munich/IMG_8069.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 4)" class="hover-shadow">
+                        <img src="img/Munich/IMG_8069.jpg" onclick="openModal('modalMunich'); currentSlide('modalMunich', 4)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Munich/IMG_8079.jpg" onclick="openModal('modalMunich'); showSlides('modalMunich', 5)" class="hover-shadow">
+                        <img src="img/Munich/IMG_8079.jpg" onclick="openModal('modalMunich'); currentSlide('modalMunich', 5)" class="hover-shadow">
                     </div>
                 </div>
 
@@ -100,42 +98,25 @@
                         <div class="caption-container">
                             <p id="caption"></p>
                         </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Munich/IMG_8064.jpg" onclick="showSlides('modalMunich', 1)" alt="Nature">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Munich/IMG_8065.jpg" onclick="showSlides('modalMunich', 2)" alt="Snow">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Munich/IMG_8066.jpg" onclick="showSlides('modalMunich', 3)" alt="Mountains">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Munich/IMG_8079.jpg" onclick="showSlides('modalMunich', 4)" alt="Lights">
-                        </div>
                     </div>
                 </div>
 
-                
                 <div class="row">
                     <h2 class="h2camera">Prosperity in a dream</h2>
                     <div class="column">
-                        <img src="img/seealpsee/IMG_8222.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 1)" class="hover-shadow">
+                        <img src="img/seealpsee/IMG_8222.jpg" onclick="openModal('modalSeealpsee'); currentSlide('modalSeealpsee', 1)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/seealpsee/IMG_8224.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 2)" class="hover-shadow">
+                        <img src="img/seealpsee/IMG_8224.jpg" onclick="openModal('modalSeealpsee'); currentSlide('modalSeealpsee', 2)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/seealpsee/IMG_8240.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 3)" class="hover-shadow">
+                        <img src="img/seealpsee/IMG_8240.jpg" onclick="openModal('modalSeealpsee'); currentSlide('modalSeealpsee', 3)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/seealpsee/IMG_8252.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 4)" class="hover-shadow">
+                        <img src="img/seealpsee/IMG_8252.jpg" onclick="openModal('modalSeealpsee'); currentSlide('modalSeealpsee', 4)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/seealpsee/IMG_8261.jpg" onclick="openModal('modalSeealpsee'); showSlides('modalSeealpsee', 5)" class="hover-shadow">
+                        <img src="img/seealpsee/IMG_8261.jpg" onclick="openModal('modalSeealpsee'); currentSlide('modalSeealpsee', 5)" class="hover-shadow">
                     </div>
                 </div>
 
@@ -174,47 +155,29 @@
                         <div class="caption-container">
                             <p id="caption"></p>
                         </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/seealpsee/IMG_8222.jpg" onclick="showSlides('modalSeealpsee', 1)" alt="Seealpsee 1">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/seealpsee/IMG_8224.jpg" onclick="showSlides('modalSeealpsee', 2)" alt="Seealpsee 2">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/seealpsee/IMG_8240.jpg" onclick="showSlides('modalSeealpsee', 3)" alt="Seealpsee 3">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/seealpsee/IMG_8252.jpg" onclick="showSlides('modalSeealpsee', 4)" alt="Seealpsee 4">
-                        </div>
                     </div>
                 </div>
-
-
 
                 <div class="row">
                     <h2 class="h2camera">Oblivion</h2>
                     <div class="column">
-                        <img src="img/Säntis/IMG_7761.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 1)" class="hover-shadow">
+                        <img src="img/Säntis/IMG_7761.jpg" onclick="openModal('modalSaentis'); currentSlide('modalSaentis', 1)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Säntis/IMG_7778.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 2)" class="hover-shadow">
+                        <img src="img/Säntis/IMG_7778.jpg" onclick="openModal('modalSaentis'); currentSlide('modalSaentis', 2)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Säntis/IMG_7833.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 3)" class="hover-shadow">
+                        <img src="img/Säntis/IMG_7833.jpg" onclick="openModal('modalSaentis'); currentSlide('modalSaentis', 3)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Säntis/IMG_7858.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 4)" class="hover-shadow">
+                        <img src="img/Säntis/IMG_7858.jpg" onclick="openModal('modalSaentis'); currentSlide('modalSaentis', 4)" class="hover-shadow">
                     </div>
                     <div class="column">
-                        <img src="img/Säntis/IMG_7873.jpg" onclick="openModal('modalSaentis'); showSlides('modalSaentis', 5)" class="hover-shadow">
+                        <img src="img/Säntis/IMG_7873.jpg" onclick="openModal('modalSaentis'); currentSlide('modalSaentis', 5)" class="hover-shadow">
                     </div>
                 </div>
 
-                <!-- Munich Modal -->
+                <!-- Saentis Modal -->
                 <div id="modalSaentis" class="modal">
                     <span class="close cursor" onclick="closeModal('modalSaentis')">&times;</span>
                     <div class="modal-content">
@@ -249,22 +212,6 @@
                         <div class="caption-container">
                             <p id="caption"></p>
                         </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Munich/IMG_8064.jpg" onclick="showSlides('modalSaentis', 1)" alt="Nature">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Säntis/IMG_7833.jpg" onclick="showSlides('modalSaentis', 2)" alt="Snow">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Säntis/IMG_7858.jpg" onclick="showSlides('modalSaentis', 3)" alt="Mountains">
-                        </div>
-
-                        <div class="column">
-                            <img class="demo" src="img/Säntis/IMG_7873.jpg" onclick="showSlides('modalSaentis', 4)" alt="Lights">
-                        </div>
                     </div>
                 </div>
 
@@ -274,9 +221,8 @@
 
     <div class="content"></div>
     <div class="taskbar">
-    
         <div class="copyright">
-            <p>Coypright 2024 Windowhead</p>
+            <p>Copyright 2024 Windowhead</p>
         </div>
     </div>
 </body>
