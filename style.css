@@ -35,10 +35,15 @@ h2 {
     font-size: 2em;
 }
 
+p {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
 .window {
     font-family: "VT323", monospace;
     width: 90%;
-    height: 80vh; 
+    height: 85vh; 
     background-color: #c3c3c3;
     border: solid 2px;
     border-color: #fdffff black black #fdffff;

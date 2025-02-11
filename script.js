@@ -14,7 +14,7 @@ function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 
-// Show the current slide
+// Show current slide
 function showSlides(modalId, n) {
     let i;
     const slides = document.querySelectorAll(`#${modalId} .mySlides`);
@@ -26,12 +26,12 @@ function showSlides(modalId, n) {
     slides[slideIndex[modalId] - 1].style.display = "block";
 }
 
-// Move to the next/previous slide
+//next/previous slide
 function plusSlides(modalId, n) {
     showSlides(modalId, slideIndex[modalId] += n);
 }
 
-// Set the current slide
+//current slide
 function currentSlide(modalId, n) {
     slideIndex[modalId] = n;
     showSlides(modalId, n);
